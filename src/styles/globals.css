@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-zinc-900;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::selection {
+    @apply bg-zinc-900 text-white;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-white text-zinc-900 hover:bg-zinc-100;
+  }
+
+  .btn-secondary {
+    @apply bg-zinc-900 text-white hover:bg-zinc-800;
+  }
+}
+
+/* Custom animations */
+.fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
